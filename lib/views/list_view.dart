@@ -22,18 +22,18 @@ class Buscador extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-  return const SizedBox(
-    child: Column(
-      children: [
-      TextField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'Buscador',
+    return Scaffold(
+      appBar: AppBar( title: const Text('Encuentra lo que buscas')),
+      body: const SizedBox(
+        width: double.infinity,
+        child: TextField(
+          decoration:InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Buscador',
           )
         )
-      ]
-    )
-  );
+      )
+    );
   }
 }
 
