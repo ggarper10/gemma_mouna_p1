@@ -13,6 +13,7 @@ class MainView extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
              _crearCabecera(),
+             _crearFormulario(),
             ],
           ),
         ),
@@ -23,8 +24,8 @@ class MainView extends StatelessWidget{
 //Crear cabecera
 Widget _crearCabecera(){
   return Container(
-    margin: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
-    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+    margin: const EdgeInsets.all(20),
+    padding: const EdgeInsets.all(20),
     decoration: BoxDecoration(
       color: const Color(0xFFF3E8FF),
       borderRadius: BorderRadius.circular(25),
@@ -44,7 +45,6 @@ Widget _crearCabecera(){
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               padding: const EdgeInsets.all(8),
@@ -72,12 +72,12 @@ Widget _crearCabecera(){
             Container(
               padding: const EdgeInsets.all(8),
               decoration: const BoxDecoration(
-                color: Color(0xFFBDE0FE),
+                color: Color(0xFFFFF3B0),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
-                Icons.favorite_rounded,
-                color: Color(0xFFFF8FAB),
+                Icons.auto_awesome,
+                color: Color(0xFF9B5DE5),
                 size: 24,
               ),
             ),
@@ -88,10 +88,70 @@ Widget _crearCabecera(){
           'Bienvenid@, introduce tu usuario y contraseña para continuar<3',
           style: TextStyle(
             fontSize: 15, 
-            fontWeight: FontWeight.w500,
             color: Color(0xFF9D4EDD)),
         ),
         ],
+      ),
+    );
+  }
+
+//Crear el formulario
+  Widget _crearFormulario(){
+    return Container(
+      width: 450,
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(
+          color: const Color(0xFFBDE0FE),
+          width: 3,
+        ),
+      ),
+      child: Column(
+        children: [
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.stars_rounded, color: Color(0xFFFF8FAB), size: 26),
+              SizedBox(width: 8),
+              Text(
+                'Tus datos de acceso',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF7B2CBF),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'Usuario o correo',
+              prefixIcon: const Icon(Icons.person_rounded, color: Color(0xFFFF8FAB)),
+              filled: true,
+              fillColor: const Color(0xFFFFF0F6),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              labelText: 'Contraseña',
+              prefixIcon: const Icon(Icons.key_rounded, color: Color(0xFF9B5DE5)),
+              filled: true,
+              fillColor: const Color(0xFFF3E8FF),
+              border: OutlineInputBorder(
+                borderRadius:BorderRadius.circular(30),
+              ),
+            ),
+          ),
+        ]
       ),
     );
   }
