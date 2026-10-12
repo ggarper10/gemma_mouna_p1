@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'views/list_view.dart';
-import 'views/main_view.dart';
+import 'views/list_view.dart';
+//import 'views/main_view.dart';
 
 	void main() => runApp(const MyApp());
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => const MaterialApp(
         title: 'P1 IPC',
         debugShowCheckedModeBanner: false,  // Oculta el banner que aparece en la esquina superior derecha
-        home: MainView(), 
+        home: Buscador(),
       );
 }
 
