@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//TÍTULO, BUSCADOR Y FONDO
+//CLASE PARA EL TÍTULO, BUSCADOR Y FONDO
 class Buscador extends StatelessWidget{
   const Buscador({super.key});
 
@@ -14,7 +14,7 @@ class Buscador extends StatelessWidget{
       appBar: AppBar( 
         backgroundColor: const Color.fromARGB(255, 243, 232, 255),
         title: const Text(
-          'Encuentra lo que buscas',
+          'Tu rincón favorito 🎀',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             //fontStyle: FontStyle.italic,
@@ -52,7 +52,7 @@ class Buscador extends StatelessWidget{
                 borderRadius: BorderRadius.circular(25.0),
               ),
               //TEXTO
-              labelText: 'Buscador',
+              labelText: 'Buscar prenda...',
 
               //ICONO DE LUPA
               prefixIcon: const Icon(
@@ -80,12 +80,12 @@ class Buscador extends StatelessWidget{
 
               //TEXTO
               Text(
-                'Productos destacados',
+                'Prendas destacadas:',
                 style: TextStyle(
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.w400,
                   color: Color.fromARGB(255, 123, 44, 191),
                   fontSize: 16.0,
-                  letterSpacing: 1.6
+                  letterSpacing: 1.5
                 )
               )
             ]
@@ -93,9 +93,13 @@ class Buscador extends StatelessWidget{
 
           const SizedBox(height: 15), //Separador
 
-          const Contenido(texto: 'Resultado 1'),
+          const Contenido(texto: 'Vestido con flores pastel'),
           const SizedBox(height: 10), //Separador
-          const Contenido(texto: 'Resultado 2'),
+          const Contenido(texto: 'Cárdigan de punto color vainilla'),
+          const SizedBox(height: 10), //Separador
+          const Contenido(texto: 'Bailarinas de satén rosa'),
+          const SizedBox(height: 10), //Separador
+          const Contenido(texto: 'Bolso corazón acolchado'),
         ]
       )
     );
@@ -103,7 +107,7 @@ class Buscador extends StatelessWidget{
 }
 
 
-//CONTENIDO DEBAJO DEL BUSCADOR
+//CLASE PARA EL CONTENIDO DEBAJO DEL BUSCADOR
 class Contenido extends StatelessWidget{
   final String texto;
   const Contenido({super.key, required this.texto});
@@ -112,14 +116,17 @@ class Contenido extends StatelessWidget{
   Widget build (BuildContext context){
     return Container(
       color: Colors.white,
+      height: 40.0,
       
       child: Row(
         children: [
           const SizedBox(width: 20), //Separador
+
           //ICONO DE ESTRELLA
           const Icon(
             Icons.stars_rounded,
-            color: Color.fromARGB(255, 250, 233, 138),
+            //color: Color.fromARGB(255, 250, 233, 138),
+            color: Color.fromARGB(255, 255, 143, 171)
           ),
 
           const SizedBox(width: 20),//Separador
@@ -128,7 +135,8 @@ class Contenido extends StatelessWidget{
           Text(
             texto,
             style: const TextStyle(
-              color: Colors.black
+              color: Colors.black,
+              fontSize: 14.0
             )
           )
         ]
