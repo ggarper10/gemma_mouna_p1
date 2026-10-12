@@ -1,20 +1,3 @@
-/*SizedBox(
-  width: double.infinity,
-  height: 100,
-  child: MyButton(),
-)
-
-Widget build(BuildContext context) {
-  return Column(
-    children: [
-      _Header(...),  // Ya sabemos qué hace este widget
-      _Body(...),
-      _Footer(...),
-    ],
-  );
-}
-*/
-
 import 'package:flutter/material.dart';
 
 //TÍTULO, BUSCADOR Y FONDO
@@ -24,6 +7,7 @@ class Buscador extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      //COLOR DE FONDO
       backgroundColor: const Color.fromARGB(255, 255, 240, 246),
 
       //TÍTULO
@@ -33,16 +17,33 @@ class Buscador extends StatelessWidget{
           'Encuentra lo que buscas',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
+            //fontStyle: FontStyle.italic,
             color: Color.fromARGB(255, 123, 44, 191)
           )
-        )
+        ),
+
+        //BOTÓN DE CERRAR SESIÓN Y VOLVER A PANTALLA PRINCIPAL
+        actions:[
+          IconButton(
+            //ICONO DE SALIDA
+            icon: const Icon(
+              Icons.logout,
+              color: Color.fromARGB(255, 123, 44, 191),
+            ),
+            tooltip: 'Cerrar sesión',
+            onPressed:(){
+              Navigator.pop(context);
+            }
+          )
+        ],
       ),
       
-      //BUSCADOR
+      //CAJA DEL BUSCADOR Y TÍTULO DE ABAJO
       body: Column(
         children:[
           const SizedBox(width: double.infinity),
+
+          //CAJA
           TextField(
             decoration: InputDecoration(
               filled: true,
@@ -50,9 +51,10 @@ class Buscador extends StatelessWidget{
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25.0),
               ),
+              //TEXTO
               labelText: 'Buscador',
 
-              //ICONO
+              //ICONO DE LUPA
               prefixIcon: const Icon(
                 Icons.search,
                 color: Color.fromARGB(255, 255, 143, 171),
@@ -61,6 +63,35 @@ class Buscador extends StatelessWidget{
           ),
 
           const SizedBox(height: 20), //Separador
+
+          //TÍTULO DE ABAJO, PRODUCTOS DESTACADOS
+          Row(
+            children: const[
+              SizedBox(width: 20),//Separador
+
+              //ICONO DE ESTRELLAS
+              Icon(
+                Icons.auto_awesome,
+                color: Color.fromARGB(255, 218, 192, 47),
+                size: 18,
+              ),
+
+              SizedBox(width: 8),//Separador
+
+              //TEXTO
+              Text(
+                'Productos destacados',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  color: Color.fromARGB(255, 123, 44, 191),
+                  fontSize: 16.0,
+                  letterSpacing: 1.6
+                )
+              )
+            ]
+          ),
+
+          const SizedBox(height: 15), //Separador
 
           const Contenido(texto: 'Resultado 1'),
           const SizedBox(height: 10), //Separador
@@ -88,7 +119,7 @@ class Contenido extends StatelessWidget{
           //ICONO DE ESTRELLA
           const Icon(
             Icons.stars_rounded,
-            color: Color.fromARGB(255, 255, 143, 171),
+            color: Color.fromARGB(255, 250, 233, 138),
           ),
 
           const SizedBox(width: 20),//Separador
