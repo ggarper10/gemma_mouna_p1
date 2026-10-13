@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'list_view.dart';
 
 class MainView extends StatelessWidget{
   const MainView({super.key});
@@ -6,37 +7,35 @@ class MainView extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF0F6),
-      body: Center(
-        child: SingleChildScrollView(
+      backgroundColor:  const Color.fromARGB(255, 255, 240, 246),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
              _crearCabecera(),
              _crearFormulario(),
+             _crearBotones(context),
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 
 //Crear cabecera
 Widget _crearCabecera(){
   return Container(
-    margin: const EdgeInsets.all(20),
+    margin: const EdgeInsets.all(15),
     padding: const EdgeInsets.all(20),
     decoration: BoxDecoration(
-      color: const Color(0xFFF3E8FF),
+      color: const Color.fromRGBO(243, 232, 255, 1),
       borderRadius: BorderRadius.circular(25),
       border: Border.all(
-        color: const Color(0xFFFFC8DD),
+        color: const Color.fromRGBO(255, 200, 221, 1),
         width: 3,
       ),
       boxShadow: const[
         BoxShadow(
-          color: Color(0x33CDB4DB),
-          blurRadius: 12,
+          color: Color.fromRGBO(205, 180, 219, 0.2),
           offset: Offset(0, 6),
         ),
       ],
@@ -49,22 +48,22 @@ Widget _crearCabecera(){
             Container(
               padding: const EdgeInsets.all(8),
               decoration: const BoxDecoration(
-                color: Color(0xFFFFF3B0),
+                color: Color.fromRGBO(255, 243, 176, 1),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.auto_awesome,
-                color: Color(0xFF9B5DE5),
+                color: Color.fromRGBO(155, 93, 229, 1),
                 size: 24,
               ),
             ),
             const SizedBox(width: 12),
             const Text(
-              'NOMBRE APP',
+              'CUTTIE STUDIO',
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF7B2CBF),
+                color: Color.fromRGBO(123, 44, 191, 1),
                 letterSpacing: 1.2,
               ),
             ),
@@ -72,12 +71,12 @@ Widget _crearCabecera(){
             Container(
               padding: const EdgeInsets.all(8),
               decoration: const BoxDecoration(
-                color: Color(0xFFFFF3B0),
+                color: Color.fromRGBO(255, 243, 176, 1),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.auto_awesome,
-                color: Color(0xFF9B5DE5),
+                color: Color.fromRGBO(155, 93, 229, 1),
                 size: 24,
               ),
             ),
@@ -88,7 +87,8 @@ Widget _crearCabecera(){
           'Bienvenid@, introduce tu usuario y contraseña para continuar<3',
           style: TextStyle(
             fontSize: 15, 
-            color: Color(0xFF9D4EDD)),
+            color: Color.fromRGBO(157, 78, 221, 1),
+        ),
         ),
         ],
       ),
@@ -105,7 +105,7 @@ Widget _crearCabecera(){
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
         border: Border.all(
-          color: const Color(0xFFBDE0FE),
+          color: const Color.fromRGBO(189, 224, 254, 1),
           width: 3,
         ),
       ),
@@ -114,14 +114,18 @@ Widget _crearCabecera(){
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.stars_rounded, color: Color(0xFFFF8FAB), size: 26),
+              Icon(
+                Icons.stars_rounded, 
+                color: Color.fromRGBO(255, 143, 171, 1), 
+                size: 26
+              ),
               SizedBox(width: 8),
               Text(
                 'Tus datos de acceso',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF7B2CBF),
+                  color: Color.fromRGBO(123, 44, 191, 1),
                 ),
               ),
             ],
@@ -130,9 +134,12 @@ Widget _crearCabecera(){
           TextField(
             decoration: InputDecoration(
               labelText: 'Usuario o correo',
-              prefixIcon: const Icon(Icons.person_rounded, color: Color(0xFFFF8FAB)),
+              prefixIcon: const Icon(
+                Icons.person_rounded, 
+                color: Color.fromRGBO(255, 143, 171, 1)
+              ),
               filled: true,
-              fillColor: const Color(0xFFFFF0F6),
+              fillColor: const Color.fromRGBO(255, 240, 246, 1),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -143,15 +150,43 @@ Widget _crearCabecera(){
             obscureText: true,
             decoration: InputDecoration(
               labelText: 'Contraseña',
-              prefixIcon: const Icon(Icons.key_rounded, color: Color(0xFF9B5DE5)),
+              prefixIcon: const Icon(
+                Icons.key_rounded, 
+                color: Color.fromRGBO(155, 93, 229, 1)
+              ),
               filled: true,
-              fillColor: const Color(0xFFF3E8FF),
+              fillColor: const Color.fromRGBO(243, 232, 255, 1),
               border: OutlineInputBorder(
                 borderRadius:BorderRadius.circular(30),
               ),
             ),
           ),
         ]
+      ),
+    );
+  }
+
+  //Crear el botón de navegación
+  Widget _crearBotones(BuildContext context){
+    return Container(
+      width:450,
+      margin: const EdgeInsets.only(top: 20),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color.fromRGBO(123, 44, 191, 1),
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+
+        //Crear cambio a la segunda pantalla
+        onPressed: () {
+        },
+        child: const Text(
+          '¡Entrar!',
+        ),
       ),
     );
   }

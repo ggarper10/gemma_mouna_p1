@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => const MaterialApp(
         title: 'P1 IPC',
         debugShowCheckedModeBanner: false,  // Oculta el banner que aparece en la esquina superior derecha
-        home: Buscador(),
+        home: MainView(),
       );
 }
 
