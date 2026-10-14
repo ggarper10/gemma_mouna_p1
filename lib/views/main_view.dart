@@ -183,9 +183,19 @@ Widget _crearCabecera(){
 
         //Crear cambio a la segunda pantalla
         onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Buscador(),
+            ),
+          );
         },
         child: const Text(
           '¡Entrar!',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
