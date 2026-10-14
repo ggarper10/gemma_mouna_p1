@@ -21,79 +21,79 @@ class MainView extends StatelessWidget{
       );
   }
 
-//Crear cabecera
-Widget _crearCabecera(){
-  return Container(
-    margin: const EdgeInsets.all(15),
-    padding: const EdgeInsets.all(20),
-    decoration: BoxDecoration(
-      color: const Color.fromRGBO(243, 232, 255, 1),
-      borderRadius: BorderRadius.circular(25),
-      border: Border.all(
-        color: const Color.fromRGBO(255, 200, 221, 1),
-        width: 3,
-      ),
-      boxShadow: const[
-        BoxShadow(
-          color: Color.fromRGBO(205, 180, 219, 0.2),
-          offset: Offset(0, 6),
+  //Crear cabecera
+  Widget _crearCabecera(){
+    return Container(
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 243, 232, 255),
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(
+          color: const Color.fromARGB(255, 255, 200, 221),
+          width: 3,
         ),
-      ],
-    ),
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 243, 176, 1),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.auto_awesome,
-                color: Color.fromRGBO(155, 93, 229, 1),
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 12),
-            const Text(
-              'CUTTIE STUDIO',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(123, 44, 191, 1),
-                letterSpacing: 1.2,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 243, 176, 1),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.auto_awesome,
-                color: Color.fromRGBO(155, 93, 229, 1),
-                size: 24,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 12),
-        const Text(
-          'Bienvenid@, introduce tu usuario y contraseña para continuar<3',
-          style: TextStyle(
-            fontSize: 15, 
-            color: Color.fromRGBO(157, 78, 221, 1),
-        ),
-        ),
+        boxShadow: const[
+          BoxShadow(
+            color: Color.fromARGB(120, 205, 180, 219),
+            offset: Offset(0, 6),
+          ),
         ],
       ),
-    );
-  }
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 243, 176),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.auto_awesome,
+                  color: Color.fromARGB(255, 155, 93, 229),
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: 12),
+              const Text(
+                'CUTTIE STUDIO',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 123, 44, 191),
+                  letterSpacing: 1.2,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 243, 176),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.auto_awesome,
+                  color: Color.fromARGB(255, 155, 93, 229),
+                  size: 24,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          const Text(
+            'Bienvenid@, introduce tu usuario y contraseña para continuar<3',
+            style: TextStyle(
+              fontSize: 15, 
+              color: Color.fromARGB(255, 157, 78, 221),
+          ),
+          ),
+          ],
+        ),
+      );
+    }
 
 //Crear el formulario
   Widget _crearFormulario(){
@@ -105,7 +105,7 @@ Widget _crearCabecera(){
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
         border: Border.all(
-          color: const Color.fromRGBO(189, 224, 254, 1),
+          color: const Color.fromARGB(255, 189, 224, 254),
           width: 3,
         ),
       ),
@@ -116,7 +116,7 @@ Widget _crearCabecera(){
             children: [
               Icon(
                 Icons.stars_rounded, 
-                color: Color.fromRGBO(255, 143, 171, 1), 
+                color: Color.fromARGB(255, 255, 143, 171), 
                 size: 26
               ),
               SizedBox(width: 8),
@@ -125,7 +125,7 @@ Widget _crearCabecera(){
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(123, 44, 191, 1),
+                  color: Color.fromARGB(255, 123, 44, 191),
                 ),
               ),
             ],
@@ -136,10 +136,10 @@ Widget _crearCabecera(){
               labelText: 'Usuario o correo',
               prefixIcon: const Icon(
                 Icons.person_rounded, 
-                color: Color.fromRGBO(255, 143, 171, 1)
+                color: Color.fromARGB(255, 255, 143, 171)
               ),
               filled: true,
-              fillColor: const Color.fromRGBO(255, 240, 246, 1),
+              fillColor: const Color.fromARGB(255, 255, 240, 246),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -152,10 +152,10 @@ Widget _crearCabecera(){
               labelText: 'Contraseña',
               prefixIcon: const Icon(
                 Icons.key_rounded, 
-                color: Color.fromRGBO(155, 93, 229, 1)
+                color: Color.fromARGB(255, 155, 93, 229)
               ),
               filled: true,
-              fillColor: const Color.fromRGBO(243, 232, 255, 1),
+              fillColor: const Color.fromARGB(255, 243, 232, 255),
               border: OutlineInputBorder(
                 borderRadius:BorderRadius.circular(30),
               ),
@@ -173,7 +173,7 @@ Widget _crearCabecera(){
       margin: const EdgeInsets.only(top: 20),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(123, 44, 191, 1),
+          backgroundColor: const Color.fromARGB(255, 123, 44, 191),
           foregroundColor: Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 18),
           shape: RoundedRectangleBorder(

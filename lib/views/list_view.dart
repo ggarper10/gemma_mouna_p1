@@ -65,8 +65,8 @@ class Buscador extends StatelessWidget{
           const SizedBox(height: 20), //Separador
 
           //TÍTULO DE ABAJO, PRODUCTOS DESTACADOS
-          Row(
-            children: const[
+          const Row(
+            children: [
               SizedBox(width: 20),//Separador
 
               //ICONO DE ESTRELLAS
@@ -125,7 +125,6 @@ class Contenido extends StatelessWidget{
           //ICONO DE ESTRELLA
           const Icon(
             Icons.stars_rounded,
-            //color: Color.fromARGB(255, 250, 233, 138),
             color: Color.fromARGB(255, 255, 143, 171)
           ),
 
