@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'views/list_view.dart';
 import 'views/main_view.dart';
 
 	void main() => runApp(const MyApp());

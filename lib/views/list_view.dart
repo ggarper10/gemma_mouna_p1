@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gemma_mouna_p1/models/prenda_models.dart';
 
 //CLASE PARA EL TÍTULO, BUSCADOR Y FONDO
 class Buscador extends StatelessWidget{
@@ -93,20 +94,44 @@ class Buscador extends StatelessWidget{
 
           const SizedBox(height: 15), //Separador
 
-          const Contenido(texto: 'Vestido con flores pastel'),
-          const SizedBox(height: 10), //Separador
-          const Contenido(texto: 'Cárdigan de punto color vainilla'),
-          const SizedBox(height: 10), //Separador
-          const Contenido(texto: 'Bailarinas de satén rosa'),
-          const SizedBox(height: 10), //Separador
-          const Contenido(texto: 'Bolso corazón acolchado'),
+          //LISTA DE LOS ELEMENTOS
+          Expanded(
+            child: ListView.builder(
+              itemCount: listaPrendas.length,
+              itemBuilder: (context, index ){
+                final prenda = listaPrendas[index];
+
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+
+                  //COLOCACIÓN DE IMAGEN
+                  child: ListTile(
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        prenda.imagenUrl,
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      )
+                    )
+                  )
+                );
+              }
+            )
+          )
+
         ]
       )
     );
   }
 }
 
-
+/*
 //CLASE PARA EL CONTENIDO DEBAJO DEL BUSCADOR
 class Contenido extends StatelessWidget{
   final String texto;
@@ -143,3 +168,4 @@ class Contenido extends StatelessWidget{
     );
   }
 }
+*/
