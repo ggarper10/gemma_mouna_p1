@@ -111,7 +111,7 @@ class Buscador extends StatelessWidget{
                   //COLOCACIÓN DE IMAGEN
                   child: ListTile(
                     leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       child: Image.network(
                         prenda.imagenUrl,
                         width: 40,
