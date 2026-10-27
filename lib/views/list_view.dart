@@ -18,7 +18,6 @@ class Buscador extends StatelessWidget{
           'Tu rincón favorito 🎀',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            //fontStyle: FontStyle.italic,
             color: Color.fromARGB(255, 123, 44, 191)
           )
         ),
@@ -65,7 +64,7 @@ class Buscador extends StatelessWidget{
 
           const SizedBox(height: 20), //Separador
 
-          //TÍTULO DE ABAJO, PRODUCTOS DESTACADOS
+          //TÍTULO DE ABAJO
           const Row(
             children: [
               SizedBox(width: 20),//Separador
@@ -85,7 +84,7 @@ class Buscador extends StatelessWidget{
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Color.fromARGB(255, 123, 44, 191),
-                  fontSize: 16.0,
+                  fontSize: 18.0,
                   letterSpacing: 1.5
                 )
               )
@@ -102,7 +101,7 @@ class Buscador extends StatelessWidget{
                 final prenda = listaPrendas[index];
 
                 return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                  margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
@@ -110,12 +109,14 @@ class Buscador extends StatelessWidget{
 
                   //COLOCACIÓN DE IMAGEN
                   child: ListTile(
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical:5),
+                    horizontalTitleGap: 30,
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.network(
                         prenda.imagenUrl,
-                        width: 40,
-                        height: 40,
+                        width: 50,
+                        height: 50,
                         fit: BoxFit.cover,
                       )
                     ),
@@ -148,7 +149,7 @@ class Buscador extends StatelessWidget{
                     //ICONO DE ESTRELLA DESTACADA
                     trailing: const Icon(
                       Icons.stars_rounded,
-                      color: Color.fromARGB(255, 255, 143, 171),
+                      color: Color.fromARGB(255, 255, 229, 81),
                     ),
 
                     //INTERACCIÓN INDICANDO LA FALTA DE LA PRÁCTICA 3
@@ -174,42 +175,3 @@ class Buscador extends StatelessWidget{
     );
   }
 }
-
-/*
-//CLASE PARA EL CONTENIDO DEBAJO DEL BUSCADOR
-class Contenido extends StatelessWidget{
-  final String texto;
-  const Contenido({super.key, required this.texto});
-
-  @override
-  Widget build (BuildContext context){
-    return Container(
-      color: Colors.white,
-      height: 40.0,
-      
-      child: Row(
-        children: [
-          const SizedBox(width: 20), //Separador
-
-          //ICONO DE ESTRELLA
-          const Icon(
-            Icons.stars_rounded,
-            color: Color.fromARGB(255, 255, 143, 171)
-          ),
-
-          const SizedBox(width: 20),//Separador
-
-          //TEXTO MOSTRADO EN PANTALLA
-          Text(
-            texto,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 14.0
-            )
-          )
-        ]
-      )
-    );
-  }
-}
-*/
