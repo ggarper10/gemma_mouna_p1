@@ -21,7 +21,7 @@ final List<Prenda> listaPrendas = [
     nombre: 'Vestido con flores pastel',
     descripcion: 'Vestido ligero ideal para primavera.',
     precio: '29.99 €',
-    imagenUrl: 'https://i.pinimg.com/736x/9f/4c/93/9f4c93edd1599eba0671ed51728ff2bd.jpg',
+    imagenUrl: 'https://i.postimg.cc/pdDBD4wv/vestido-Flores.jpg',
   ),
   const Prenda(
     id: '2',

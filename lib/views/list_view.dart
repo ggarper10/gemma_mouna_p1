@@ -118,7 +118,51 @@ class Buscador extends StatelessWidget{
                         height: 40,
                         fit: BoxFit.cover,
                       )
-                    )
+                    ),
+                    
+                    //NOMBRE PRENDA
+                    title: Text(
+                      prenda.nombre,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      )
+                    ),
+
+                    //DESCRIPCIÓN Y PRECIO
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(prenda.descripcion),
+                        const SizedBox(height: 4),
+                        Text(
+                          prenda.precio,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 123, 44, 191),
+                          ),
+                        )
+                      ]
+                    ),
+
+                    //ICONO DE ESTRELLA DESTACADA
+                    trailing: const Icon(
+                      Icons.stars_rounded,
+                      color: Color.fromARGB(255, 255, 143, 171),
+                    ),
+
+                    //INTERACCIÓN INDICANDO LA FALTA DE LA PRÁCTICA 3
+                    onTap:(){
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            '🎀 La visualización detallada se desarrollará en la Práctica 3 🎀',
+                          ),
+                          duration: Duration(seconds:3),
+                        )
+                      );
+                    }
+
                   )
                 );
               }
