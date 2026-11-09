@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gemma_mouna_p1/models/prenda_models.dart';
 
 //CLASE PARA EL TÍTULO, BUSCADOR Y FONDO
@@ -16,7 +17,7 @@ class Buscador extends StatelessWidget{
         backgroundColor: const Color.fromARGB(255, 243, 232, 255),
         title: const Text(
           'Tu rincón favorito 🎀',
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Color.fromARGB(255, 123, 44, 191)
           )
@@ -70,10 +71,10 @@ class Buscador extends StatelessWidget{
               SizedBox(width: 20),//Separador
 
               //ICONO DE ESTRELLAS
-              Icon(
-                Icons.auto_awesome,
+              FaIcon(
+                FontAwesomeIcons.wandMagicSparkles,
                 color: Color.fromARGB(255, 218, 192, 47),
-                size: 18,
+                size: 16,
               ),
 
               SizedBox(width: 8),//Separador
@@ -147,9 +148,10 @@ class Buscador extends StatelessWidget{
                     ),
 
                     //ICONO DE ESTRELLA DESTACADA
-                    trailing: const Icon(
-                      Icons.stars_rounded,
+                    trailing: const FaIcon(
+                      FontAwesomeIcons.solidStar,
                       color: Color.fromARGB(255, 255, 229, 81),
+                      size:20,
                     ),
 
                     //INTERACCIÓN INDICANDO LA FALTA DE LA PRÁCTICA 3
