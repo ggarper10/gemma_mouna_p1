@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "nombre": "Vestido con flores pastel",
+    "descripcion": "Vestido ligero ideal para primavera.",
+    "precio": "29.99 €",
+    "imagenUrl": "https://i.postimg.cc/pdDBD4wv/vestido-Flores.jpg"
+  },
+  {
+    "id": "3",
+    "nombre": "Bailarinas de satén rosa",
+    "descripcion": "Bailarinas cómodas con lazo.",
+    "precio": "19.90 €",
+    "imagenUrl": "https://i.postimg.cc/gj0qbJnw/bailarinas.jpg"
+  },
+  {
+    "id": "5",
+    "nombre": "Top de encaje lila",
+    "descripcion": "Top con detalles de encaje.",
+    "precio": "15.99 €",
+    "imagenUrl": "https://i.postimg.cc/zDdFSncp/encaje.jpg"
+  },
+  {
+    "id": "6",
+    "nombre": "Falda plisada blanca",
+    "descripcion": "Falda corta estilo tenis.",
+    "precio": "22.50 €",
+    "imagenUrl": "https://i.postimg.cc/Fs8bwhmR/falda.jpg"
+  }
+]
